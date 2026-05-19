@@ -15,7 +15,7 @@ public class ASDGenericItems {
     // easter egg quest icons
     public static final RegistryObject<Item> ICON_CLAYLESS = ITEMS.register("icon_clayless",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> ICON_576COKEOVEN = ITEMS.register("icon_576cokeovens.json",
+    public static final RegistryObject<Item> ICON_576COKEOVEN = ITEMS.register("icon_576cokeovens",
             () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) { ITEMS.register(eventBus);}
