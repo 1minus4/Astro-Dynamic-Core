@@ -4,6 +4,7 @@ import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
+import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistry;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
@@ -19,6 +20,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+import net.oneminus4.astrodyncore.common.data.materials.ASDMaterials;
 import net.oneminus4.astrodyncore.common.item.ASDGenericItems;
 import net.oneminus4.astrodyncore.common.item.ModCreativeModTabs;
 import org.apache.logging.log4j.LogManager;
@@ -30,6 +32,7 @@ public class ASDCore {
 
     public static final String MOD_ID = "astrodyncore";
     public static final Logger LOGGER = LogManager.getLogger();
+    public static MaterialRegistry MATERIAL_REGISTRY;
     public static GTRegistrate EXAMPLE_REGISTRATE = GTRegistrate.create(ASDCore.MOD_ID);
 
     public ASDCore() {
@@ -78,15 +81,9 @@ public class ASDCore {
         return new ResourceLocation(MOD_ID, path);
     }
 
-    /**
-     * Create a material manager for your mod using GT's API.
-     * You MUST have this if you have custom materials.
-     * Remember to register them not to GT's namespace, but your own.
-     * 
-     * @param event
-     */
+
     private void addMaterialRegistries(MaterialRegistryEvent event) {
-        GTCEuAPI.materialManager.createRegistry(ASDCore.MOD_ID);
+        MATERIAL_REGISTRY = GTCEuAPI.materialManager.createRegistry(ASDCore.MOD_ID);
     }
 
     /**
@@ -96,7 +93,7 @@ public class ASDCore {
      * @param event
      */
     private void addMaterials(MaterialEvent event) {
-        // CustomMaterials.init();
+        ASDMaterials.register();
     }
 
     /**

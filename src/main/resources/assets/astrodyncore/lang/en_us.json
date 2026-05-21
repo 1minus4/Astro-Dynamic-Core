@@ -1,4 +1,8 @@
 {
+  "material.astrodyncore.bakelite": "Bakelite",
+
+  "item.astrodyncore.hydraulic_control_unit": "Hydraulic Control Unit"
+
   "item.astrodyncore.icon_clayless": ":clayless:",
   "item.astrodyncore.icon_576cokeovens": "576 Coke Ovens",
 

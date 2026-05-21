@@ -12,6 +12,10 @@ public class ASDGenericItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, ASDCore.MOD_ID);
 
+    // steam ulv crafting items
+    public static final RegistryObject<Item> HYDRAULIC_CONTROL_UNIT = ITEMS.register("hydraulic_control_unit",
+            () -> new Item(new Item.Properties()));
+
     // easter egg quest icons
     public static final RegistryObject<Item> ICON_CLAYLESS = ITEMS.register("icon_clayless",
             () -> new Item(new Item.Properties()));

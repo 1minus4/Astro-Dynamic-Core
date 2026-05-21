@@ -17,6 +17,8 @@ public class ModCreativeModTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ASDGenericItems.ICON_CLAYLESS.get()))
                     .title(Component.translatable("creativetab.asdc_generic_tab"))
                     .displayItems((pParameters, pOutput) -> {
+                        // steam ulv items
+                        pOutput.accept(ASDGenericItems.HYDRAULIC_CONTROL_UNIT.get());
                         // easter egg quest items
                         pOutput.accept(ASDGenericItems.ICON_CLAYLESS.get());
                         pOutput.accept(ASDGenericItems.ICON_576COKEOVEN.get());
